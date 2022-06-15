@@ -1,4 +1,4 @@
-import { DefineFunction, Manifest, Schema } from './mod'; // will be node module import
+const { DefineFunction, Manifest, Schema } = require('@slack/deno-slack-sdk'); // will be node module import
 
 export const ReverseFunction = DefineFunction({
   callback_id: "reverse",
