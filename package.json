@@ -2,9 +2,10 @@
   "name": "bolt-js-template",
   "version": "1.0.0",
   "description": "A scaffold template for Slack apps",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "node app.js",
+    "build": "rimraf dist && npm link @slack/deno-slack-sdk && tsc",
+    "start": "node dist/app.js",
     "lint": "eslint --ext .js ."
   },
   "author": "Slack Technologies, LLC",
@@ -22,13 +23,20 @@
     "url": "https://github.com/slackapi/bolt-js-template/issues"
   },
   "dependencies": {
-    "@slack/deno-slack-sdk": "@slack/deno-slack-sdk",
     "@slack/bolt": "slackapi/bolt-js#future-update-get-manifest-hook",
+    "@slack/deno-slack-sdk": "@slack/deno-slack-sdk",
     "dotenv": "~16.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@types/node": "^18.0.0",
     "eslint": "~8.11.0",
     "eslint-config-airbnb-base": "~15.0.0",
-    "eslint-plugin-import": "~2.25.4"
+    "eslint-plugin-import": "~2.25.4",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
   }
 }

@@ -1,6 +1,6 @@
 const { DefineFunction, Manifest, Schema } = require('@slack/deno-slack-sdk'); // will be node module import
 
-export const ReverseFunction = DefineFunction({
+const ReverseFunction = DefineFunction({
   callback_id: "reverse",
   title: "Reverse",
   description: "Takes a string and reverses it",
@@ -25,7 +25,7 @@ export const ReverseFunction = DefineFunction({
   },
 });
 
-export default Manifest({
+module.exports = Manifest({
   name: "reverse",
   description: "Reverse a string",
   icon: "assets/icon.png",
